@@ -54,9 +54,14 @@ metadata:
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:315069654700:certificate/c565ac42-ac77-4cb4-beb5-8f915ffaa11a
     alb.ingress.kubernetes.io/group.name: joindevops
 spec:
+  selector:
+    matchLabels:
+      app: frontend
+      tier: web
+      project: expense
   ingressClassName: alb
   rules:
-  - host: "frontend.daws82s.online"
+  - host: "frontend.kittudevops.shop"
     http:
       paths:
       - pathType: Prefix
